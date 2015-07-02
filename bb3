@@ -1,0 +1,4 @@
+use amazonserver;
+select pid,count(username),avg(gx),avg(sg1),sum(gx),sum(sg1),avg(mx),sum(mx),sum(mn),min(mx),max(mn),max(grad) from(
+select * from (select username,pid,max(attempts) as mx,min(attempts) as mn,max(time),min(time),sum(grade) as gx,sum(max_grade) as sg1,max(max_grade) as grad from(select username,problem_id,attempts,event_type,grade,max_grade,time,split(split(split(path,"\\;")[5],"_")[1],"/")[0] as pid from pi_log_table where course_id='IITBombayX/CS101.1x/2T2014' order by username,time)t1 where pid!='null' group by username,pid)t2 where sg1>0
+)t3 group by pid;

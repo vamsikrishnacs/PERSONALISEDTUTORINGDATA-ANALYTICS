@@ -1,0 +1,7 @@
+Use amazonserver;
+select id,sum(cnt),avg(cnt),count(username) from (select username,id,cnt from (
+select username,id,count(event_type) as cnt
+from vi_log_table
+where course_id='IITBombayX/CS101.1x/2T2014' and
+event_type in ('seek_video') group by username,id)t2)t3 group by id;
+

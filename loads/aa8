@@ -1,0 +1,6 @@
+Use amazonserver;
+select event_type,max(time)
+from vi_log_table
+where course_id='IITBombayX/CS101.1x/2T2014' and id='i4x-IITBombayX-CS101_1x-video-641407821f3a44ee9530a3ea900e2e80' and username='AlvaroTJ' and event_type='load_video' group by event_type;
+
+

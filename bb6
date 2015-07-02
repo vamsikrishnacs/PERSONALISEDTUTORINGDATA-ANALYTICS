@@ -1,0 +1,2 @@
+use amazonserver;
+select * from(select username,sum(grade),sum(max_grade) as sg from pi_log_table where course_id='IITBombayX/CS101.1x/2T2014' group by username)t1 where sg>0;

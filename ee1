@@ -1,0 +1,2 @@
+use amazonserver;
+select distinct(username) from pi_log_table; 

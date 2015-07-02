@@ -1,0 +1,3 @@
+Use amazonserver;
+select username,count(*) as videos_watched from log_table where event_type in('seq_goto','seq_next','seq_prev') group by username; 
+ 

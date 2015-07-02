@@ -1,0 +1,2 @@
+Use amazonserver;
+select username,count(distinct(id)) as videos_watched from vi_log_table where course_id='IITBombayX/CS101.1x/2T2014' group by username;

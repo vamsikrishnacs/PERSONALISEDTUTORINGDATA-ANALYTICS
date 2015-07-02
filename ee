@@ -1,0 +1,2 @@
+use amazonserver;
+select * from log_table where username='JKHPL' order by time;  

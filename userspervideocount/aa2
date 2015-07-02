@@ -1,0 +1,3 @@
+Use amazonserver;
+select id,count(distinct(username)) as count from vi_log_table where course_id='IITBombayX/CS101.1x/2T2014' group by id;
+~              

@@ -1,0 +1,2 @@
+use amazonserver;
+select username,pid,min(time),max(time) from(select username,event_type,ip,path,old,new,time,split(page,"/")[9] as pid,id,page from ne_log_table where course_id='IITBombayX/CS101.1x/2T2014' order by username,time)t1 where pid!='null' group by username,pid;

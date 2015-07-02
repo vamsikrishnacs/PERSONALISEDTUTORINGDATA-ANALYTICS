@@ -1,0 +1,6 @@
+Use amazonserver;
+select username,id,min(time),max(time)
+from  (
+select username,id,event_type,time,old_time,new_time from vi_log_table where course_id='IITBombayX/CS101.1x/2T2014' order by time         
+) t2 group by username,id;
+

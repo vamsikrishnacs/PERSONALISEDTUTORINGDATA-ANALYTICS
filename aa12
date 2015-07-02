@@ -1,0 +1,3 @@
+use amazonserver;
+select username,time,old_time,new_time,new_time-old_time as result
+from  ( select username,id,event_type,time,old_time,new_time from vi_log_table where course_id='IITBombayX/CS101.1x/2T2014' order by username ) t2 where event_type='seek_video'and id='i4x-IITBombayX-CS101_1x-video-ac88b4fd7d1c4dc4aab8a3a912d6029d';

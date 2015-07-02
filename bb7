@@ -1,0 +1,2 @@
+use amazonserver;
+select username,pid,max(time),min(time) from(select username,problem_id,event_type,grade,max_grade,time,split(split(split(path,"\\;")[5],"_")[1],"/")[0] as pid from pi_log_table where course_id='IITBombayX/CS101.1x/2T2014' order by username,time)t1 group by username,pid

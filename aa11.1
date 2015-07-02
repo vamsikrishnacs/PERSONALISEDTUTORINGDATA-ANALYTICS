@@ -1,0 +1,3 @@
+Use amazonserver;
+select username,id,max(currenttime),max(new_time) from( select username,id,event_type,time,cast(currenttime as float),cast(old_time as float),cast(new_time as float) from vi_log_table where course_id='IITBombayX/CS101.1x/2T2014'order by time ) t2 group by username,id;
+
